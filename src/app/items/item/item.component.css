@@ -1,0 +1,20 @@
+.cart--item-list li {
+    padding: 1rem 0;
+  
+    display: grid;
+    grid-template-columns: 24px minmax(150px, 1fr) repeat(3, auto);
+    grid-gap: 0.5rem;
+    align-items: center;
+  
+    border-bottom: 1px dotted #000000;
+  
+    font-size: 1.25rem;
+  }
+  
+  .cart--item-list li:last-child {
+    border-bottom: none;
+  }
+  
+  .cart--item-icon {
+    width: 24px;
+  }
