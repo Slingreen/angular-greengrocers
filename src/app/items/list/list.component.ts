@@ -9,9 +9,13 @@ import { Item } from '../../models/item';
 })
 export class ListComponent {
   constructor(private readonly itemsService: ItemsService) {}
-  items = this.itemsService.getItems();
+  items = this.itemsService.getItems("");
 
   updateItem(item: Item) {
     this.itemsService.updateItem(item);
+  }
+
+  getFIlter(s: string){
+    this.items = this.itemsService.getItems(s)
   }
 }

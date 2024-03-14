@@ -1,3 +1,8 @@
+<select name="filter" id="filter" #filter (change)="getFIlter(filter.value)">
+  <option value="">---</option>
+  <option value="fruit">fruit</option>
+  <option value="vegetable">vegetable</option>
+</select>
 <ul class="item-list store--item-list">
   <ng-container *ngFor="let item of items | async">
     <app-items-item

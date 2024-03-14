@@ -14,14 +14,15 @@ export class ItemsService {
   private itemList: Item[] = [];
   
   http = inject(HttpClient)
-  async getItems() {
-    const result = await firstValueFrom(this.http.get(`${environment.apiUrl}groceries`));
+  async getItems(type: string) {
+    const result = await firstValueFrom(this.http.get(`${environment.apiUrl}groceries${(type.length>0 ? "?type="+type : "")}`));
     // @ts-ignore
     this.itemList = result;
     return this.itemList;
   }
 
   updateItem(item: Item){
-    this.cartService.addItemToCart(item)
+    this.cartService.addItemToCart
   }
+  
 }

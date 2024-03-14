@@ -1,5 +1,4 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { CartService } from 'src/app/cart/services/cart.service';
 import { TotalService } from '../services/total.service';
 import { Subscription } from 'rxjs';
 
@@ -14,12 +13,6 @@ export class ViewComponent implements OnInit, OnDestroy{
   private totalSub: Subscription | undefined;
   total: number = 0
   // @Input('total') total: number = 0;
-
-  calculate(number: number) {
-    console.log("number", number)
-    this.total = number
-    console.log("total", this.total)
-  }
 
   ngOnInit(): void {
     this.totalSub = this.totalService.total$.subscribe(
