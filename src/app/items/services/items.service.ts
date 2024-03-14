@@ -10,7 +10,6 @@ import { CartService } from 'src/app/cart/services/cart.service';
 })
 export class ItemsService {
   constructor(private readonly cartService: CartService) {}
-  private itemId = 1;
   private itemList: Item[] = [];
   
   http = inject(HttpClient)
@@ -22,7 +21,7 @@ export class ItemsService {
   }
 
   updateItem(item: Item){
-    this.cartService.addItemToCart
+    this.cartService.addItemToCart(item)
   }
   
 }
